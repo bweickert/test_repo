@@ -14,6 +14,7 @@
 {
     NSDictionary *_characterDetailJson;
     Character *_testGuy;
+    /*usw*/
 }
 
 -(void)setUp
