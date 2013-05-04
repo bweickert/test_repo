@@ -13,6 +13,7 @@
 @implementation CharacterTests
 {
     NSDictionary *_characterDetailJson;
+    Character *_testGuy;
 }
 
 -(void)setUp
@@ -27,6 +28,7 @@
     STAssertNotNil(json, @"invalid test data");
     
     _characterDetailJson = json;
+    _testGuy = [[Character alloc]initWithCharacterDetailData:_characterDetailJson];
 }
 
 -(void)tearDown
@@ -43,7 +45,7 @@
     STAssertNotNil(testGuy2, @"Could not create character from nil data");
 }
 
-/*-(void)testCreateCharacterFromDetailJsonProps
+-(void)testCreateCharacterFromDetailJsonProps
 {
     STAssertEqualObjects(_testGuy.thumbnail, @"borean-tundra/171/40508075-avatar.jpg", @"thumbnail url is wrong");
     STAssertEqualObjects(_testGuy.name, @"Hagrel", @"name is wrong");
@@ -80,6 +82,6 @@
     STAssertEqualObjects(_testGuy.trinketItem1.name,@"Rosary of Light", @"neck name is wrong");
     STAssertEqualObjects(_testGuy.trinketItem2.name,@"Bone-Link Fetish", @"neck name is wrong");
     STAssertEqualObjects(_testGuy.rangedItem.name,@"Ironfeather Longbow", @"neck name is wrong");
-}*/
+}
 
 @end
